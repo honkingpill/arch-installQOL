@@ -29,7 +29,6 @@ PACKAGES=(
 	"firefox"
 	"rofi"
 	"telegram-desktop"
-	"steam"
 	"nerd-fonts-complete"
 )
 
