@@ -1,0 +1,37 @@
+# Установка Discord на ARCH и ему подобные дистрибутивы.
+
+## Шаг 1
+
+Установить все требуемые официальные пакеты. На примере arch
+
+sudo pacman -S pipewire pipewire-pulse wireplumber xdg-desktop-portal xdg-desktop-portal-hyprland
+
+Важно - pulseaudio (стандартная утилита работы со звуками) конфликтует с pipewire-pulse. Они являются прямыми аналогами друг друга под разные сферы. Не забудьте удалить. Если же забыли - просто согласитесь с удалением конфликта.
+
+## Шаг 2 
+
+Далее заводите в автозапуск (привожу на примере hyprland) окружение XDG-desktop-portal
+
+exec-once = dbus-update-activation-environment --system WAYLAND_DISPLAY HYPRLAND_INSTANCE_SIGNATURE
+exec-once = systemctl --user import-environment WAYLAND_DISPLAY HYPRLAND_INSTANCE_SIGNATURE
+exec-once = systemctl --user start xdg-desktop-portal-hyprland.service
+
+После чего ставим discord
+
+sudo pacman -S discord
+
+## Шаг 3 
+
+Добавить пакет из community ветки, я использую yay менеджер. (прежде чем выполнять этот шаг - выполните перезагрузку, может быть всё уже работает. В случае если не работает - далее по инструкции
+
+
+yay -S xwaylandvideobridge
+
+## Шаг 4
+
+Проведите перезапуск сессии. Теперь дискорд должен запуститься И работать в штатном режиме 
+(примечание: гайд не несет в себе информации по обходу блокировок, работоспособность дискорда в условиях полной проходимости сети. Если нужно - устанавливайте openVPN, WireGuard, V2RayN (GUI версия V2Ray на арче работающая "из коробки") и используйте по своему усмотрению. Zapret для блокировок на территории РФ для Linux систем можете найти по запросу zapret-youtube-discord-linux на GitHub. Там подробная инструкция в 3х строках. Разобраться не сложно
+
+reboot 
+
+
