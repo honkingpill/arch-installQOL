@@ -1,0 +1,15 @@
+Легкий мануал по установке стима для контроля установки утилит.
+
+Первостепенно нужно раскоментить multilib репозиторий в /etc/pacman.conf, он находится в самомнизу, можно найти его по multilib (в nano с помощью ctrl W, в vim с помощью /)
+
+Далее накатываем:
+
+sudo pacman -S lib32-nvidia-utils steam 
+
+По ссылке ниже определяем свою видеокарту и качаем: DRM driver, opengl, vulkan, ddx driver
+https://wiki.archlinux.org/title/Xorg#Driver_installation
+
+Если стим некорректно работает с некой игрой, будь то старый проект или инди - советую поставить Proton GE 
+https://github.com/GloriousEggroll/proton-ge-custom
+
+Основные потребности покрыты. Подразумевается, что к моменту, когда ты, как пользователь такой безусловно тяжелой системы решил поиграть на ней - у тебя уже установлены пакеты вроде pulseaudio, pipewire, pavucontrol, networkmanager, xdg-desktop-portal, xdg-desktop-portal-hyprland
