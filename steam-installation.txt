@@ -7,7 +7,7 @@
 sudo pacman -S lib32-nvidia-utils steam 
 
 По ссылке ниже определяем свою видеокарту и качаем: DRM driver, opengl, vulkan, ddx driver
-https://wiki.archlinux.org/title/Xorg#Driver_installation
+https://wiki.archlinux.org/title/Graphics_processing_unit#Installation
 
 Если стим некорректно работает с некой игрой, будь то старый проект или инди - советую поставить Proton GE 
 https://github.com/GloriousEggroll/proton-ge-custom
