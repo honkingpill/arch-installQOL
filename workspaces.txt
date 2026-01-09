@@ -1,0 +1,25 @@
+Для установки приколов нужно: 
+
+Поставить Meson
+
+sudo pacman -S meson
+
+клонировать репозиторий
+git clone https://github.com/raybbian/hyprtasking.git
+
+meson setup build
+ninja -C build
+sudo ninja -C build install
+
+проверить установку по пути /usr/local/lib/ (обычно тут пусто и это будет единственный файл)
+libhyprtasking.so
+
+exec-once = hyprtasking 
+в конфиг hyprland
+
+plugin = /usr/local/lib/libhyprtasking.so
+
+Туда же 
+
+reboot
+Готово. В моём билде по стандарту стоит бинд super+w, можете взять мой или прочитать документацию в оригинальном гитхабе
